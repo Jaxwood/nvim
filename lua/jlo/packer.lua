@@ -10,6 +10,7 @@ return require('packer').startup(function(use)
     use 'prichrd/netrw.nvim'
     use 'nvim-tree/nvim-web-devicons'
     use 'voldikss/vim-floaterm'
+    use 'lewis6991/gitsigns.nvim'
 
 	use {
 		'nvim-telescope/telescope.nvim', tag = '0.1.1',
