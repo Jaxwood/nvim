@@ -24,6 +24,3 @@ vim.keymap.set("n", "<leader><leader>", function()
     vim.cmd("so")
 end)
 
-vim.keymap.set('n', '<leader>g', ':FloatermNew lazygit<CR>')
-vim.keymap.set('n', '<leader>k', ':FloatermNew k9s<CR>')
-vim.keymap.set('n', '<leader>m', ':FloatermNew spt<CR>')
