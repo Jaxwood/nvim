@@ -11,6 +11,7 @@ return require('packer').startup(function(use)
     use 'nvim-tree/nvim-web-devicons'
     use 'voldikss/vim-floaterm'
     use 'lewis6991/gitsigns.nvim'
+    use 'ggandor/leap.nvim'
 
     use {
         'nvim-telescope/telescope.nvim', tag = '0.1.1',
