@@ -13,6 +13,7 @@ return require('packer').startup(function(use)
     use 'voldikss/vim-floaterm'
     use 'lewis6991/gitsigns.nvim'
     use {'iamcco/markdown-preview.nvim'}
+    use {'numToStr/Comment.nvim' }
 
     use {
         'nvim-telescope/telescope.nvim', tag = '0.1.4',
