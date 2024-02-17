@@ -1,4 +1,4 @@
-require'netrw'.setup{
+require 'netrw'.setup {
     use_devicons = true,
 }
 

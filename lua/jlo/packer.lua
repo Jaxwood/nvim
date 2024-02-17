@@ -12,8 +12,12 @@ return require('packer').startup(function(use)
     use 'nvim-tree/nvim-web-devicons'
     use 'voldikss/vim-floaterm'
     use 'lewis6991/gitsigns.nvim'
-    use {'iamcco/markdown-preview.nvim'}
-    use {'numToStr/Comment.nvim' }
+    use({
+        "iamcco/markdown-preview.nvim",
+        run = function() vim.fn["mkdp#util#install"]() end,
+    })
+    use { 'numToStr/Comment.nvim' }
+    use { 'towolf/vim-helm', ft = "helm" }
 
     use {
         'nvim-telescope/telescope.nvim', tag = '0.1.4',
@@ -31,14 +35,15 @@ return require('packer').startup(function(use)
     use('theprimeagen/harpoon')
     use('mbbill/undotree')
     use('github/copilot.vim')
-
+    use('vim-pandoc/vim-pandoc')
+    use('vim-pandoc/vim-pandoc-syntax')
     use {
         'VonHeikemen/lsp-zero.nvim',
         branch = 'v2.x',
         requires = {
             -- LSP Support
             { 'neovim/nvim-lspconfig' }, -- Required
-            {                 -- Optional
+            {                            -- Optional
                 'williamboman/mason.nvim',
                 run = function()
                     pcall(vim.cmd, 'MasonUpdate')
@@ -47,9 +52,9 @@ return require('packer').startup(function(use)
             { 'williamboman/mason-lspconfig.nvim' }, -- Optional
 
             -- Autocompletion
-            { 'hrsh7th/nvim-cmp' }, -- Required
+            { 'hrsh7th/nvim-cmp' },     -- Required
             { 'hrsh7th/cmp-nvim-lsp' }, -- Required
-            { 'L3MON4D3/LuaSnip' }, -- Required
+            { 'L3MON4D3/LuaSnip' },     -- Required
         }
     }
 end)
