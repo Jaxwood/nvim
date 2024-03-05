@@ -6,6 +6,7 @@ vim.cmd [[packadd packer.nvim]]
 return require('packer').startup(function(use)
     -- Packer can manage itself
     use 'wbthomason/packer.nvim'
+    use { "ellisonleao/carbon-now.nvim", config = function() require('carbon-now').setup() end }
     use {
         "folke/which-key.nvim",
         config = function()
