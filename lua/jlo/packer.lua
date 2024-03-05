@@ -6,6 +6,16 @@ vim.cmd [[packadd packer.nvim]]
 return require('packer').startup(function(use)
     -- Packer can manage itself
     use 'wbthomason/packer.nvim'
+    use({
+        "stevearc/conform.nvim",
+        config = function()
+            require("conform").setup({
+                formatters_by_ft = {
+                    yaml = { "prettier" }
+                }
+            })
+        end,
+    })
     use { "ellisonleao/carbon-now.nvim", config = function()
         require('carbon-now').setup({
             open_cmd = "open"
