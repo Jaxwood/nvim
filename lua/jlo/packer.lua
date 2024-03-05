@@ -36,7 +36,6 @@ return require('packer').startup(function(use)
         }
     })
 
-    use 'xiyaowong/transparent.nvim'
     use 'prichrd/netrw.nvim'
     use 'nvim-tree/nvim-web-devicons'
     use 'voldikss/vim-floaterm'
@@ -46,7 +45,6 @@ return require('packer').startup(function(use)
         run = function() vim.fn["mkdp#util#install"]() end,
     })
     use { 'numToStr/Comment.nvim' }
-    use { 'towolf/vim-helm', ft = "helm" }
 
     use {
         'nvim-telescope/telescope.nvim', tag = '0.1.5',
@@ -60,7 +58,6 @@ return require('packer').startup(function(use)
     vim.cmd.colorscheme "catppuccin"
 
     use('nvim-treesitter/nvim-treesitter', { run = ':TSUpdate' })
-    use('nvim-treesitter/playground')
     use('theprimeagen/harpoon')
     use('mbbill/undotree')
     use('github/copilot.vim')
