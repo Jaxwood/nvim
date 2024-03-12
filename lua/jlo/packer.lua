@@ -6,12 +6,13 @@ vim.cmd [[packadd packer.nvim]]
 return require('packer').startup(function(use)
     -- Packer can manage itself
     use 'wbthomason/packer.nvim'
+    use 'mfussenegger/nvim-lint'
     use({
         "stevearc/conform.nvim",
         config = function()
             require("conform").setup({
                 formatters_by_ft = {
-                    yaml = { "prettier" }
+                    yaml = { "prettier" },
                 }
             })
         end,
