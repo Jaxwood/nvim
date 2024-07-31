@@ -38,7 +38,11 @@ return require('packer').startup(function(use)
     use({
         "jackMort/ChatGPT.nvim",
         config = function()
-            require("chatgpt").setup()
+            require("chatgpt").setup({
+                openai_edit_params = {
+                    model = "gpt-4o-mini"
+                }
+            })
         end,
         requires = {
             "MunifTanjim/nui.nvim",
