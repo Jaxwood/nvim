@@ -35,26 +35,17 @@ return require('packer').startup(function(use)
             }
         end
     }
+
     use({
-        "jackMort/ChatGPT.nvim",
-        config = function()
-            require("chatgpt").setup({
-                openai_edit_params = {
-                    model = "gpt-4o-mini"
-                }
-            })
-        end,
+        "kdheepak/lazygit.nvim",
+        -- optional for floating window border decoration
         requires = {
-            "MunifTanjim/nui.nvim",
             "nvim-lua/plenary.nvim",
-            "folke/trouble.nvim",
-            "nvim-telescope/telescope.nvim"
-        }
+        },
     })
 
     use 'prichrd/netrw.nvim'
     use 'nvim-tree/nvim-web-devicons'
-    use 'voldikss/vim-floaterm'
     use 'lewis6991/gitsigns.nvim'
     use({
         "iamcco/markdown-preview.nvim",
