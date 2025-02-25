@@ -1,4 +1,3 @@
-require("jlo.packer")
-require("jlo.remap")
-require("jlo.set")
-
+require("jlo.settings")
+require("jlo.maps")
+require("jlo.lazy")
