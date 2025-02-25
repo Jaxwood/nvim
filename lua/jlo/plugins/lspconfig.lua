@@ -12,6 +12,39 @@ return {
 		local protocol = require("vim.lsp.protocol")
 
 		local on_attach = function(client, bufnr)
+			local keymap = vim.keymap
+
+			keymap.set("n", "gd", function()
+				vim.lsp.buf.definition()
+			end, opts)
+			keymap.set("n", "K", function()
+				vim.lsp.buf.hover()
+			end, opts)
+			keymap.set("n", "<leader>ws", function()
+				vim.lsp.buf.workspace_symbol()
+			end, opts)
+			keymap.set("n", "<leader>d", function()
+				vim.diagnostic.open_float()
+			end, opts)
+			keymap.set("n", "[d", function()
+				vim.diagnostic.goto_next()
+			end, opts)
+			keymap.set("n", "]d", function()
+				vim.diagnostic.goto_prev()
+			end, opts)
+			keymap.set("n", "<leader>ca", function()
+				vim.lsp.buf.code_action()
+			end, opts)
+			keymap.set("n", "<leader>rr", function()
+				vim.lsp.buf.references()
+			end, opts)
+			keymap.set("n", "<leader>rn", function()
+				vim.lsp.buf.rename()
+			end, opts)
+			keymap.set("i", "<C-h>", function()
+				vim.lsp.buf.signature_help()
+			end, opts)
+
 			-- format on save
 			if client.server_capabilities.documentFormattingProvider then
 				vim.api.nvim_create_autocmd("BufWritePre", {
@@ -44,12 +77,6 @@ return {
 					capabilities = capabilities,
 				})
 			end,
-			["tailwindcss"] = function()
-				nvim_lsp["tailwindcss"].setup({
-					on_attach = on_attach,
-					capabilities = capabilities,
-				})
-			end,
 			["html"] = function()
 				nvim_lsp["html"].setup({
 					on_attach = on_attach,
@@ -70,6 +97,12 @@ return {
 			end,
 			["pyright"] = function()
 				nvim_lsp["pyright"].setup({
+					on_attach = on_attach,
+					capabilities = capabilities,
+				})
+			end,
+			["gopls"] = function()
+				nvim_lsp["gopls"].setup({
 					on_attach = on_attach,
 					capabilities = capabilities,
 				})
