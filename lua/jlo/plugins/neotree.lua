@@ -29,6 +29,8 @@ return {
 				mappings = {
 					["<CR>"] = "open_and_close_neotree",
 					["<S-CR>"] = "open",
+					["<C-s>"] = { "scroll_preview", config = { direction = -10 } },
+					["<C-f>"] = "",
 				},
 			},
 		},
