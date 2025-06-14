@@ -7,6 +7,7 @@ return {
   },
   config = function()
     local on_attach = function(client, bufnr)
+      local opts = { buffer = bufnr, silent = true }
       local keymap = vim.keymap
 
       keymap.set("n", "gd", function()
@@ -20,12 +21,6 @@ return {
       end, opts)
       keymap.set("n", "<leader>d", function()
         vim.diagnostic.open_float()
-      end, opts)
-      keymap.set("n", "[d", function()
-        vim.diagnostic.goto_next()
-      end, opts)
-      keymap.set("n", "]d", function()
-        vim.diagnostic.goto_prev()
       end, opts)
       keymap.set("n", "<leader>ca", function()
         vim.lsp.buf.code_action()
@@ -57,6 +52,13 @@ return {
     vim.lsp.config['ts_ls'] = {
       capabilities = capabilities,
       on_attach = on_attach,
+      settings = {
+        typescript = {
+          preferences = {
+            disableSuggestions = false,
+          }
+        }
+      }
     }
     vim.lsp.config['gopls'] = {
       capabilities = capabilities,
@@ -65,6 +67,23 @@ return {
     vim.lsp.config['lua_ls'] = {
       capabilities = capabilities,
       on_attach = on_attach,
+      settings = {
+        Lua = {
+          runtime = {
+            version = 'LuaJIT',
+          },
+          diagnostics = {
+            globals = { 'vim' },
+          },
+          workspace = {
+            library = vim.api.nvim_get_runtime_file("", true),
+            checkThirdParty = false,
+          },
+          telemetry = {
+            enable = false,
+          },
+        },
+      },
     }
     vim.lsp.enable({
       "gopls",
