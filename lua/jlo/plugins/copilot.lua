@@ -5,8 +5,6 @@ return {
     vim.g.copilot_assume_mapped = true
 
     vim.keymap.set("i", "<C-j>", 'copilot#Accept("")', { silent = true, expr = true, replace_keycodes = false })
-    vim.keymap.set("n", "<leader>t", function()
-      require("CopilotChat").open()
-    end)
+    vim.keymap.set("n", "<leader>t", "<cmd>CodeCompanionChat<cr>")
   end,
 }

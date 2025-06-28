@@ -1,4 +1,4 @@
 [tools]
-node = "latest"
+node = "20"
 go = "latest"
 python = "latest"
