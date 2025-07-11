@@ -5,6 +5,8 @@ return {
   },
   build = "npm install -g mcp-hub@latest",
   config = function()
-    require("mcphub").setup()
+    require("mcphub").setup({
+      auto_approve = true,
+    })
   end
 }
