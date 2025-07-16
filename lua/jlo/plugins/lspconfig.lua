@@ -3,6 +3,7 @@ return {
   event = { "BufReadPre", "BufNewFile" },
   dependencies = {
     "hrsh7th/cmp-nvim-lsp",
+    "b0o/schemastore.nvim",
     { "folke/neodev.nvim", opts = {} },
   },
   config = function()
@@ -93,8 +94,10 @@ return {
       settings = {
         yaml = {
           schemaStore = {
-            enable = true,
-          }
+            enable = false,
+            url = ""
+          },
+          schemas = require('schemastore').yaml.schemas(),
         },
       }
     }
