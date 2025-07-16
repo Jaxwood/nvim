@@ -37,7 +37,7 @@ return {
         "rust",
         "python",
         "go",
-        "pkl,
+        "pkl",
       },
       incremental_selection = {
         enable = true,
