@@ -90,6 +90,13 @@ return {
     vim.lsp.config['yamlls'] = {
       capabilities = capabilities,
       on_attach = on_attach,
+      settings = {
+        yaml = {
+          schemaStore = {
+            enable = true,
+          }
+        },
+      }
     }
 
     vim.lsp.enable({
