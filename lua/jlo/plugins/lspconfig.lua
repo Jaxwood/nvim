@@ -85,10 +85,18 @@ return {
         },
       },
     }
+    -- requires 'yaml-language-server' to be installed
+    -- npm install -g yaml-language-server
+    vim.lsp.config['yamlls'] = {
+      capabilities = capabilities,
+      on_attach = on_attach,
+    }
+
     vim.lsp.enable({
       "gopls",
       "ts_ls",
       "lua_ls",
+      "yamlls",
     })
   end,
 }
