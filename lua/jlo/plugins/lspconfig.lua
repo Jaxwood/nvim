@@ -97,7 +97,16 @@ return {
             enable = false,
             url = ""
           },
-          schemas = require('schemastore').yaml.schemas(),
+          schemas = require("schemastore").yaml.schemas({
+            extra = {
+              {
+                description = "Bura configuration file",
+                name = "Bura",
+                fileMatch = "bura.yaml",
+                url = vim.fn.expand("~/.bura/bura.schema.json"),
+              },
+            },
+          }),
         },
       }
     }
