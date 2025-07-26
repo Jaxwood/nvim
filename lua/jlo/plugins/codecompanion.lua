@@ -5,7 +5,7 @@ return {
       chat = {
         adapter = {
           name = "copilot",
-          model = "claude-sonnet-4",
+          model = "gpt-4.1",
         },
       },
     },
