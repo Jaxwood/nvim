@@ -86,6 +86,16 @@ return {
         },
       },
     }
+    vim.lsp.config['jsonls'] = {
+      on_attach = on_attach,
+      capabilities = capabilities,
+      settings = {
+        json = {
+          schemas = require("schemastore").json.schemas(),
+          validate = { enable = true },
+        },
+      },
+    }
     -- requires 'yaml-language-server' to be installed
     -- npm install -g yaml-language-server
     vim.lsp.config['yamlls'] = {
@@ -115,6 +125,7 @@ return {
       "gopls",
       "ts_ls",
       "lua_ls",
+      "jsonls",
       "yamlls",
     })
   end,
