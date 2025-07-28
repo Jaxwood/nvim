@@ -1,4 +1,8 @@
 [tools]
 node = "20"
-go = "latest"
-python = "latest"
+go = "1.24.5"
+python = "3.12.3"
+"npm:mcp-hub" = "4.2.0"
+"npm:yaml-language-server" = "1.18.0"
+"npm:vscode-langservers-extracted" = "4.10.0"
+"pipx:vectorcode" = "0.7.10"
