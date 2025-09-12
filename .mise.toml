@@ -2,7 +2,12 @@
 node = "20"
 go = "1.24.5"
 python = "3.12.3"
-"npm:mcp-hub" = "4.2.0"
+"npm:mcp-hub" = "4.2.1"
 "npm:yaml-language-server" = "1.18.0"
 "npm:vscode-langservers-extracted" = "4.10.0"
+"npm:typescript-language-server" = "4.4.0"
 "pipx:vectorcode" = "0.7.10"
+"go:golang.org/x/tools/gopls" = "v0.20.0"
+
+[settings]
+experimental = true
