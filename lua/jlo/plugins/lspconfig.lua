@@ -135,6 +135,11 @@ return {
       }
     }
 
+    vim.lsp.config['ruff'] = {
+      capabilities = capabilities,
+      on_attach = on_attach,
+    }
+
     vim.lsp.enable({
       "gopls",
       "ts_ls",
@@ -142,6 +147,7 @@ return {
       "jsonls",
       "yamlls",
       "pyright",
+      "ruff",
     })
   end,
 }
