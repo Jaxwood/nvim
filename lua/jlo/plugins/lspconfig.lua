@@ -121,12 +121,27 @@ return {
       }
     }
 
+    vim.lsp.config['pyright'] = {
+      capabilities = capabilities,
+      on_attach = on_attach,
+      settings = {
+        python = {
+          analysis = {
+            autoSearchPaths = true,
+            diagnosticMode = "workspace",
+            useLibraryCodeForTypes = true
+          }
+        }
+      }
+    }
+
     vim.lsp.enable({
       "gopls",
       "ts_ls",
       "lua_ls",
       "jsonls",
       "yamlls",
+      "pyright",
     })
   end,
 }
