@@ -50,6 +50,12 @@ return {
 
     local capabilities = require("cmp_nvim_lsp").default_capabilities()
 
+    vim.lsp.config['csharp_ls'] = {
+      capabilities = capabilities,
+      on_attach = on_attach,
+      root_dir = vim.fs.root(0, {".sln", ".csproj"}),
+    }
+
     vim.lsp.config['ts_ls'] = {
       capabilities = capabilities,
       on_attach = on_attach,
@@ -148,6 +154,7 @@ return {
       "yamlls",
       "pyright",
       "ruff",
+      "csharp_ls"
     })
   end,
 }
