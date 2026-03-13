@@ -1,6 +1,17 @@
 return {
   "olimorris/codecompanion.nvim",
   opts = {
+    adapters = {
+      ollama = function()
+        return require("codecompanion.adapters").extend("ollama", {
+          schema = {
+            model = {
+              default = "qwen2.5-coder:3b",
+            },
+          },
+        })
+      end,
+    },
     strategies = {
       chat = {
         adapter = {
