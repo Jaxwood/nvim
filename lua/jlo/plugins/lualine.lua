@@ -15,11 +15,11 @@ return {
         lualine_c = {
           {
             "filename",
-            path = 1, -- 0 = just filename, 1 = relative path, 2 = absolute path
+            path = 3,
           }
         },
-        lualine_x = { "codecompanion", "encoding", "fileformat", "filetype" },
-        lualine_y = { "progress" },
+        lualine_x = { "codecompanion" },
+        lualine_y = { "encoding", "fileformat", "filetype" },
         lualine_z = { "location" },
       },
     })
