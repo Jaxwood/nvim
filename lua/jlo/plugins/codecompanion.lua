@@ -12,12 +12,26 @@ return {
           },
         })
       end,
+      acp = {
+        copilot_acp = function()
+          return require("codecompanion.adapters").extend("copilot_acp", {
+            commands = {
+              default = {
+                "copilot",
+                "--acp",
+                "--stdio",
+                "--allow-all",
+              }
+            }
+          })
+        end,
+      }
     },
     interactions = {
       chat = {
         adapter = {
           name = "copilot_acp",
-          model = "claude-opus-4.6",
+          model = "claude-opus-4.5",
         },
       },
     },
