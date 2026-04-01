@@ -13,3 +13,6 @@ vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv")
 
 -- replace the word under the cursor
 vim.keymap.set("n", "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]])
+
+-- open codecompanion chat
+vim.keymap.set("n", "<leader>t", ":CodeCompanionChat<CR>")
