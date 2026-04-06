@@ -11,6 +11,9 @@ return {
 			completion = { documentation = { auto_show = false } },
 			sources = {
 				default = { "lsp", "path", "snippets", "buffer", "copilot" },
+				per_filetype = {
+					codecompanion = { "codecompanion" },
+				},
 				providers = {
 					copilot = {
 						name = "copilot",
@@ -18,9 +21,14 @@ return {
 						score_offset = 100,
 						async = true,
 					},
+					codecompanion = {
+						name = "CodeCompanion",
+						module = "codecompanion.providers.completion.blink",
+						enabled = true,
+					},
 				},
 			},
-			fuzzy = { implementation = "prefer_rust_with_warning" },
+			fuzzy = { implementation = "prefer_rust" },
 		},
 		opts_extend = { "sources.default" },
 	},

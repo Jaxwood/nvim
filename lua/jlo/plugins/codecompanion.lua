@@ -32,7 +32,7 @@ return {
 		interactions = {
 			chat = {
 				adapter = {
-					name = "copilot_acp",
+					name = "copilot",
 					model = "claude-opus-4.5",
 				},
 			},
