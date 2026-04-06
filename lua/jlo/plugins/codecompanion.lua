@@ -1,17 +1,19 @@
 return {
 	"olimorris/codecompanion.nvim",
-	tag = "v19.7.0",
+	tag = "v19.9.0",
 	opts = {
 		adapters = {
-			ollama = function()
-				return require("codecompanion.adapters").extend("ollama", {
-					schema = {
-						model = {
-							default = "qwen2.5-coder:3b",
+			http = {
+				ollama = function()
+					return require("codecompanion.adapters").extend("ollama", {
+						schema = {
+							model = {
+								default = "qwen2.5-coder:3b",
+							},
 						},
-					},
-				})
-			end,
+					})
+				end,
+			},
 			acp = {
 				copilot_acp = function()
 					return require("codecompanion.adapters").extend("copilot_acp", {
@@ -31,6 +33,12 @@ return {
 			chat = {
 				adapter = {
 					name = "copilot_acp",
+					model = "claude-opus-4.5",
+				},
+			},
+			inline = {
+				adapter = {
+					name = "copilot",
 					model = "claude-opus-4.5",
 				},
 			},
