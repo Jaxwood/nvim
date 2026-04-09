@@ -1,5 +1,5 @@
 [tools]
-node = "20"
+node = "22"
 go = "1.24.5"
 python = "3.12.3"
 "npm:mcp-hub" = "4.2.1"
