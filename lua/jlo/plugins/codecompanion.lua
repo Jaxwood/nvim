@@ -1,6 +1,6 @@
 return {
 	"olimorris/codecompanion.nvim",
-	tag = "v19.11.0",
+	tag = "v19.12.0",
 	opts = {
 		adapters = {
 			http = {
@@ -33,13 +33,13 @@ return {
 			chat = {
 				adapter = {
 					name = "copilot",
-					model = "claude-opus-4.5",
+					model = "claude-opus-4.6",
 				},
 			},
 			inline = {
 				adapter = {
 					name = "copilot",
-					model = "claude-opus-4.5",
+					model = "claude-opus-4.6",
 				},
 			},
 		},
