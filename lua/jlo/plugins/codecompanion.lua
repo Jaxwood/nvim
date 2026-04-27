@@ -43,6 +43,18 @@ return {
 				},
 			},
 		},
+		mcp = {
+			servers = {
+				["sysdig-mcp-server"] = {
+					cmd = { "go", "run", "github.com/sysdiglabs/sysdig-mcp-server/cmd/server@latest" },
+					env = {
+						SYSDIG_MCP_API_HOST = "env:SYSDIG_MCP_API_HOST",
+						SYSDIG_MCP_API_TOKEN = "env:SYSDIG_MCP_API_TOKEN",
+						SYSDIG_MCP_TRANSPORT = "stdio",
+					},
+				},
+			},
+		},
 	},
 	dependencies = {
 		"nvim-lua/plenary.nvim",
