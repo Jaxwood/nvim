@@ -45,6 +45,9 @@ return {
 		},
 		mcp = {
 			servers = {
+				["playwright"] = {
+					cmd = { "npx", "@playwright/mcp@latest" },
+				},
 				["sysdig-mcp-server"] = {
 					cmd = { "go", "run", "github.com/sysdiglabs/sysdig-mcp-server/cmd/server@latest" },
 					env = {
