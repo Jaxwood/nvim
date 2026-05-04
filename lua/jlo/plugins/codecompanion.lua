@@ -1,6 +1,6 @@
 return {
 	"olimorris/codecompanion.nvim",
-	tag = "v19.12.0",
+	tag = "v19.13.0",
 	opts = {
 		adapters = {
 			http = {
