@@ -16,3 +16,7 @@ vim.keymap.set("n", "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><
 
 -- open codecompanion chat
 vim.keymap.set("n", "<leader>t", ":CodeCompanionChat<CR>")
+
+-- codediff history
+vim.keymap.set("n", "<leader>dh", ":CodeDiff history %<CR>")
+vim.keymap.set("n", "<leader>dH", ":CodeDiff history<CR>")
